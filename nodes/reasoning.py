@@ -57,41 +57,29 @@ CRITICAL: You are aiming for a 10/10 NOBEL-PRIZE quality theory on your FIRST at
 
 ULTIMATE GOAL: Do not generate detail for the sake of detail. Provide immense, ground-breaking scientific value. Your discoveries MUST push humanity forward. Be extremely aggressive in challenging the boundaries of current knowledge to achieve true breakthroughs.
 
-Format your output as exactly 3 sections:
-CONTRADICTION: [Describe the paradox or gap in the current literature]
-HYPOTHESIS: [Your radical, paradigm-shifting theory]
-EXPERIMENT: [Your method to prove it]"""
+Format your output as a SINGLE VALID JSON OBJECT with exactly 3 keys: "contradiction", "hypothesis", and "experiment". Do not output any markdown formatting like ```json. Just raw JSON."""
     )
     
     chain = prompt | llm
     response = chain.invoke({"goal": goal, "context": context})
     
     text = response.content
-    contradictions = []
-    hypotheses = []
-    experiments = []
-    
-    # Parse the response safely
-    current_section = None
-    buffer = []
-    
-    for line in text.split("\n"):
-        if "CONTRADICTION:" in line:
-            current_section = "C"
-            buffer.append(line.replace("CONTRADICTION:", "").strip())
-        elif "HYPOTHESIS:" in line:
-            if current_section == "C": contradictions.append(" ".join(buffer).strip())
-            current_section = "H"
-            buffer = [line.replace("HYPOTHESIS:", "").strip()]
-        elif "EXPERIMENT:" in line:
-            if current_section == "H": hypotheses.append({"hypothesis": " ".join(buffer).strip()})
-            current_section = "E"
-            buffer = [line.replace("EXPERIMENT:", "").strip()]
-        elif current_section:
-            buffer.append(line.strip())
-            
-    if current_section == "E":
-        experiments.append({"proposal": " ".join(buffer).strip()})
+    if text.startswith("```json"):
+        text = text[7:]
+    if text.endswith("```"):
+        text = text[:-3]
+        
+    import json
+    try:
+        data = json.loads(text.strip())
+        contradictions = [data.get("contradiction", "")]
+        hypotheses = [{"hypothesis": data.get("hypothesis", "")}]
+        experiments = [{"proposal": data.get("experiment", "")}]
+    except json.JSONDecodeError:
+        print("Failed to parse JSON. Falling back to raw text.")
+        contradictions = ["Failed to parse contradiction."]
+        hypotheses = [{"hypothesis": text}]
+        experiments = [{"proposal": "Design an experiment to test the hypothesis above."}]
         
     return {
         "contradictions": contradictions,
