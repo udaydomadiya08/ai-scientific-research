@@ -37,12 +37,14 @@ Execution Results/Output: {execution_results}
 {feedback_section}
 
 REQUIREMENTS:
-1. Output MUST be valid LaTeX code starting with \documentclass{{article}}.
-2. Include sections: Abstract, Introduction, Related Work, Methodology, Experiments, Results, and Conclusion.
-3. ANTI-HALLUCINATION PROTOCOL (RESULTS): You MUST report only the exact numbers, statistics, and findings present in the `Execution Results`. Do not invent or hallucinate data that is not in the execution logs.
-4. ANTI-HALLUCINATION PROTOCOL (CITATIONS): Do not invent fake DOIs or fake authors. If you cite a paper, it must be highly relevant and you must be confident it exists.
-5. NOBEL QUALITY MANDATE: You must aim for a 10/10 peer-review score on the FIRST draft. Write with the clarity, rigor, and visionary scope of a Nobel-winning paper in Nature/Science. Ensure the narrative clearly highlights the paradigm shift.
-6. Output ONLY the raw LaTeX code. Do not include any markdown wrappers (like ```latex)."""
+1. Output MUST be valid LaTeX code starting with \documentclass{{article}}. Use packages like amsmath, graphicx, and hyperref.
+2. Include sections: Abstract, Introduction, Related Work, Theoretical Framework, Methodology, Experiments, Results, Discussion, and Conclusion.
+3. EXTREME DEPTH AND LENGTH: This is a full-length, professional journal submission (target: 15+ pages). DO NOT provide shallow summaries. You must write AT LEAST 800 words per section. Expand exhaustively on every concept, background theory, and methodological step.
+4. MATHEMATICAL RIGOR: Include a dedicated "Theoretical Framework" section heavily populated with complex, formal mathematical equations (\begin{equation}) modeling the core hypothesis. 
+5. ANTI-HALLUCINATION PROTOCOL (RESULTS): You MUST report only the exact numbers, statistics, and findings present in the `Execution Results`. Do not invent or hallucinate data that is not in the execution logs. If the experiment failed, detail the exact technical reasons and theoretical implications of the failure.
+6. ANTI-HALLUCINATION PROTOCOL (CITATIONS): Do not invent fake DOIs or fake authors. If you cite a paper, it must be highly relevant and you must be confident it exists.
+7. NOBEL QUALITY MANDATE: You must aim for a 10/10 peer-review score on the FIRST draft. Write with the clarity, rigor, and visionary scope of a Nobel-winning paper in Nature/Science. Ensure the narrative clearly highlights the paradigm shift.
+8. Output ONLY the raw LaTeX code. Do not include any markdown wrappers (like ```latex)."""
     )
     
     feedback_section = ""
