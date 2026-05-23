@@ -39,8 +39,10 @@ Execution Results/Output: {execution_results}
 REQUIREMENTS:
 1. Output MUST be valid LaTeX code starting with \documentclass{{article}}.
 2. Include sections: Abstract, Introduction, Related Work, Methodology, Experiments, Results, and Conclusion.
-3. Pretend you actually ran the experiment and report the findings based on the Execution Results.
-4. Output ONLY the raw LaTeX code. Do not include any markdown wrappers (like ```latex)."""
+3. ANTI-HALLUCINATION PROTOCOL (RESULTS): You MUST report only the exact numbers, statistics, and findings present in the `Execution Results`. Do not invent or hallucinate data that is not in the execution logs.
+4. ANTI-HALLUCINATION PROTOCOL (CITATIONS): Do not invent fake DOIs or fake authors. If you cite a paper, it must be highly relevant and you must be confident it exists.
+5. NOBEL QUALITY MANDATE: You must aim for a 10/10 peer-review score on the FIRST draft. Write with the clarity, rigor, and visionary scope of a Nobel-winning paper in Nature/Science. Ensure the narrative clearly highlights the paradigm shift.
+6. Output ONLY the raw LaTeX code. Do not include any markdown wrappers (like ```latex)."""
     )
     
     feedback_section = ""

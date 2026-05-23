@@ -26,6 +26,7 @@ Review the following academic manuscript:
 {latex}
 
 Provide a detailed peer review based on the "NOBEL PROTOCOL":
+- FACT-CHECKING: Ensure all citations and experimental results strictly adhere to reality. If the results look like fake synthetic data, or if the citations are hallucinated, REJECT IT.
 - If this research is "incremental", "safe", or "standard", you MUST reject it and give it a low score (< 7).
 - To achieve a 10/10, the manuscript MUST propose a verified paradigm shift, a fundamental breakthrough, or a radical unification of fields that pushes humanity forward.
 
@@ -34,7 +35,8 @@ Include:
 2. Paradigm-Shift Analysis (Is this revolutionary or incremental?)
 3. Strengths & Weaknesses
 4. Final Recommendation (Accept / Reject / Major Revision)
-5. Overall Score (out of 10)
+5. Required Revisions (If rejected or major revision, provide STRICT, ACTIONABLE next steps on how to rewrite the code or theory to pass).
+6. Overall Score (out of 10)
 
 Be highly critical, analytical, and fair. 
 IMPORTANT: Your response MUST end with exactly this format:
@@ -58,4 +60,12 @@ SCORE: X/10
     score_match = re.search(r"SCORE:\s*(\d+)/10", review)
     score = int(score_match.group(1)) if score_match else 0
         
-    return {"peer_review": review, "peer_review_score": score, "reviewer_feedback": review}
+    # Properly increment revision count in the state!
+    current_revisions = state.get("revision_count", 0)
+    
+    return {
+        "peer_review": review, 
+        "peer_review_score": score, 
+        "reviewer_feedback": review,
+        "revision_count": current_revisions + 1
+    }

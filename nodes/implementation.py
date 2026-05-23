@@ -35,9 +35,10 @@ Your task is to write a complete, standalone Python script to execute the follow
 
 REQUIREMENTS:
 1. The code must be fully self-contained and runnable.
-2. It must generate some output (e.g., printing simulation results or creating a simple matplotlib plot saved as 'results.png').
-3. Do NOT use complex ML frameworks if you don't have real data. Use numpy/scipy to simulate a theoretical model instead.
-4. Output ONLY the raw Python code block starting with ```python and ending with ```. Do not include any explanations."""
+2. It must generate some output (e.g., printing analysis results or creating a matplotlib plot saved as 'results.png').
+3. REALITY PROTOCOL: You are STRICTLY FORBIDDEN from using `numpy.random` or generating synthetic fake data. You MUST use libraries like `requests`, `pandas`, `urllib`, or `biopython` to fetch REAL empirical data from public APIs (e.g., NCBI, PubChem, World Bank, arXiv, etc.).
+4. NOBEL QUALITY MANDATE: Write highly advanced, optimized, and rigorous experimental code on the FIRST try so that the manuscript node receives 10/10 peer-review quality results immediately.
+5. Output ONLY the raw Python code block starting with ```python and ending with ```. Do not include any explanations."""
     )
     
     feedback_section = ""

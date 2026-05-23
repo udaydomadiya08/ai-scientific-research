@@ -38,8 +38,6 @@ def build_graph() -> StateGraph:
             return END
         else:
             print(f"\\n[AGENTIC RESOLVE] Paper scored {score}/10. Initiating revision {revisions + 1}/3...")
-            # Increment revision count
-            state["revision_count"] = revisions + 1
             return "implement_algorithm"
     
     # Define Edges

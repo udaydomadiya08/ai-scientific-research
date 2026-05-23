@@ -26,12 +26,12 @@ def cross_paper_reasoning(state: ResearchState) -> dict:
         query = questions[0] if questions else goal
         query_vector = embeddings.embed_query(query)
         
-        search_result = client.search(
+        search_result = client.query_points(
             collection_name=collection_name,
-            query_vector=query_vector,
+            query=query_vector,
             limit=5
         )
-        context = "\n".join([hit.payload["text"] for hit in search_result])
+        context = "\n".join([hit.payload["text"] for hit in search_result.points])
     except Exception as e:
         print(f"Failed to query Qdrant: {e}")
         context = "No relevant context found."
@@ -52,6 +52,8 @@ We extracted the following context from recent research papers:
 Based on this evidence, you must find the ANOMALIES. Look for paradoxes, contradictions, or missing links in the current literature.
 Use FIRST-PRINCIPLES reasoning to generate 1 radical, paradigm-shifting hypothesis that challenges the status quo. Do NOT propose incremental science.
 Then, propose 1 specific experimental design to prove this radical hypothesis.
+
+CRITICAL: You are aiming for a 10/10 NOBEL-PRIZE quality theory on your FIRST attempt. Do not hold back. Be visionary but scientifically grounded.
 
 Format your output as exactly 3 sections:
 CONTRADICTION: [Describe the paradox or gap in the current literature]
