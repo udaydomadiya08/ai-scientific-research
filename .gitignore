@@ -1,0 +1,5 @@
+venv/
+workspace/
+__pycache__/
+qdrant_data/
+.env

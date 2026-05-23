@@ -1,0 +1,16 @@
+langchain
+langgraph
+langchain-openai
+langchain-anthropic
+langchain-google-genai
+llama-index
+llama-index-vector-stores-qdrant
+qdrant-client
+neo4j
+pymupdf
+arxiv
+semanticscholar
+pydantic
+python-dotenv
+beautifulsoup4
+requests
