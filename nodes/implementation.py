@@ -42,8 +42,13 @@ REQUIREMENTS:
     )
     
     feedback_section = ""
-    if revision > 0 and feedback:
-        feedback_section = f"PREVIOUS PEER REVIEW FEEDBACK:\n{feedback}\n\nPlease fix the algorithm to address this feedback."
+    if revision > 0:
+        feedback_section = f"PREVIOUS PEER REVIEW FEEDBACK:\n{feedback}\n"
+        if not state.get("execution_success", True) or "Error" in state.get("execution_results", ""):
+            feedback_section += f"\nPREVIOUS EXECUTION FAILED WITH ERROR:\n{state.get('execution_results', '')}\n\nCRITICAL: You MUST fix the Python code to resolve this exact error! Do not repeat the same mistake."
+        else:
+            feedback_section += "\nPREVIOUS EXECUTION SUCCEEDED, but the theory/results were rejected. Improve the complexity, scientific depth, and rigorousness of the experiment."
+        feedback_section += "\n\nPlease completely rewrite the algorithm to address this feedback and guarantee success."
     
     chain = prompt | llm
     response = chain.invoke({"experiment": experiment, "feedback_section": feedback_section})
