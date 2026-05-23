@@ -71,3 +71,9 @@ All outputs are saved to the `workspace/` directory, including:
 ## 📜 License
 
 This project is licensed under the MIT License.
+
+## 🙏 Acknowledgements
+
+This project was inspired by and builds upon the foundational concepts introduced by the following pioneering open-source AI research projects:
+- [SakanaAI / AI-Scientist](https://github.com/sakanaai/ai-scientist)
+- [HKUDS / AI-Researcher](https://github.com/hkuds/ai-researcher)
