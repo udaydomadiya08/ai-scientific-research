@@ -25,9 +25,9 @@ def retrieve_papers(state: ResearchState) -> dict:
     # Deduplicate
     queries = list(dict.fromkeys(queries))
     
-    # Dynamic paper count: base 5 per query, capped at 20 total
-    papers_per_query = 5
-    max_total = 20
+    # Dynamic paper count: 10 per query, up to 50 total
+    papers_per_query = 10
+    max_total = 50
     
     client = arxiv.Client()
     papers = []
