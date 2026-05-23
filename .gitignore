@@ -3,3 +3,12 @@ workspace/
 __pycache__/
 qdrant_data/
 .env
+.DS_Store
+*.pyc
+*.pyo
+*.pyd
+.Python
+env/
+.pytest_cache/
+.coverage
+htmlcov/
