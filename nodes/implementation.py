@@ -38,7 +38,8 @@ REQUIREMENTS:
 2. It must generate some output (e.g., printing analysis results or creating a matplotlib plot saved as 'results.png').
 3. REALITY PROTOCOL: You are STRICTLY FORBIDDEN from using `numpy.random` or generating synthetic fake data. You MUST use libraries like `requests`, `pandas`, `urllib`, or `biopython` to fetch REAL empirical data from public APIs (e.g., NCBI, PubChem, World Bank, arXiv, etc.).
 4. NOBEL QUALITY MANDATE: Write highly advanced, optimized, and rigorous experimental code on the FIRST try so that the manuscript node receives 10/10 peer-review quality results immediately.
-5. Output ONLY the raw Python code block starting with ```python and ending with ```. Do not include any explanations."""
+5. ULTIMATE GOAL: Your code must produce immense, undeniable scientific value. Do not generate complexity for the sake of complexity, but to achieve real scientific discovery breakthroughs that push humanity forward. Be aggressive and ambitious in your experimental design.
+6. Output ONLY the raw Python code block starting with ```python and ending with ```. Do not include any explanations."""
     )
     
     feedback_section = ""

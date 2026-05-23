@@ -44,7 +44,8 @@ REQUIREMENTS:
 5. ANTI-HALLUCINATION PROTOCOL (RESULTS): You MUST report only the exact numbers, statistics, and findings present in the `Execution Results`. Do not invent or hallucinate data that is not in the execution logs. If the experiment failed, detail the exact technical reasons and theoretical implications of the failure.
 6. ANTI-HALLUCINATION PROTOCOL (CITATIONS): Do not invent fake DOIs or fake authors. If you cite a paper, it must be highly relevant and you must be confident it exists.
 7. NOBEL QUALITY MANDATE: You must aim for a 10/10 peer-review score on the FIRST draft. Write with the clarity, rigor, and visionary scope of a Nobel-winning paper in Nature/Science. Ensure the narrative clearly highlights the paradigm shift.
-8. Output ONLY the raw LaTeX code. Do not include any markdown wrappers (like ```latex)."""
+8. ULTIMATE GOAL: Detail not for the sake of detail, but to provide immense, undeniable scientific value. Your research must produce real scientific discovery breakthroughs that push humanity forward. Be aggressive, profound, and revolutionary in your conclusions.
+9. Output ONLY the raw LaTeX code. Do not include any markdown wrappers (like ```latex)."""
     )
     
     feedback_section = ""

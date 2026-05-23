@@ -55,6 +55,8 @@ Then, propose 1 specific experimental design to prove this radical hypothesis.
 
 CRITICAL: You are aiming for a 10/10 NOBEL-PRIZE quality theory on your FIRST attempt. Do not hold back. Be visionary but scientifically grounded.
 
+ULTIMATE GOAL: Do not generate detail for the sake of detail. Provide immense, ground-breaking scientific value. Your discoveries MUST push humanity forward. Be extremely aggressive in challenging the boundaries of current knowledge to achieve true breakthroughs.
+
 Format your output as exactly 3 sections:
 CONTRADICTION: [Describe the paradox or gap in the current literature]
 HYPOTHESIS: [Your radical, paradigm-shifting theory]
